@@ -173,7 +173,7 @@ MyDesklet.prototype = {
 		// Set weekday style
 		for (let i = 0; i < 7; i++)
 			this.labelWeekdays[i].style = STYLE_LABEL_DAY + (this.date.getFullYear() == now.getFullYear()
-					&& this.date.getMonth() == now.getMonth() && i == now.getDay() ?
+					&& this.date.getMonth() == now.getMonth() && i == (now.getDay() + 6) % 7 ?
 					" font-weight: bold;" : "") + (i === 6? " color: " + this.colourSundays + ";" : "")
 					+ (i === 5 ? " color: " + this.colourSaturdays + ";" : "");
 		// Remove currently added days
